@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.config": "json",
+        "particulas_carga.h": "c"
+    }
+}
