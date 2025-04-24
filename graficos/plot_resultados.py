@@ -13,9 +13,9 @@ os.makedirs(PASTA_SAIDA, exist_ok=True)
 
 # Caminho para os CSVs
 arquivos = {
-    "Base": "dados_saida/resultados_base.csv",
-    "Predador-Presa": "dados_saida/resultados_predador.csv",
-    "Partículas Carregadas": "dados_saida/resultados_carga.csv",
+    "Base": "../dados_saida/resultados_base.csv",
+    "Predador-Presa": "../dados_saida/resultados_predador.csv",
+    "Partículas Carregadas": "../dados_saida/resultados_carga.csv",
 }
 
 
@@ -80,6 +80,7 @@ def plot_geral(funcao):
     plt.ylabel("Mínimo médio")
     plt.legend(title="método", loc="upper right")
     plt.tight_layout()
+    plt.yscale('log')
     plt.savefig(f"{PASTA_SAIDA}/grafico_{funcao.lower()}.png")
     plt.close()
 
@@ -100,6 +101,7 @@ def plot_por_modelo():
         plt.title(f"Mínimos por método - Modelo: {modelo}")
         plt.ylabel("Mínimo encontrado")
         plt.tight_layout()
+        plt.yscale('log')
         plt.savefig(f"{PASTA_SAIDA}/modelo_{modelo.lower().replace(' ', '_')}.png")
         plt.close()
 
@@ -113,6 +115,7 @@ def plot_boxplot_funcoes():
         plt.title(f"Boxplot - Função {func}")
         plt.xticks(rotation=45)
         plt.tight_layout()
+        plt.yscale('log')
         plt.savefig(f"{PASTA_SAIDA}/boxplot_{func.lower()}.png")
         plt.close()
 
